@@ -17,9 +17,9 @@ echo 'Downloading and building GNU Flex'
 curl -L http://prdownloads.sourceforge.net/flex/$FLEX_ARCHIVE_NAME?download > $FLEX_ARCHIVE_NAME
 
 tar -jxf $FLEX_ARCHIVE_NAME
-pushd $FLEX_DIRNAME
+cd $FLEX_DIRNAME
 install_cwd
-popd
+cd /tmp
 
 echo 'Downloading and building GNU Bison'
 BISON_DIRNAME=bison-2.6
@@ -28,8 +28,8 @@ BISON_ARCHIVE_NAME=$BISON_DIRNAME.tar.xz
 curl -LO http://ftp.gnu.org/gnu/bison/$BISON_ARCHIVE_NAME
 
 tar -Jxf $BISON_ARCHIVE_NAME
-pushd $BISON_DIRNAME
+cd $BISON_DIRNAME
 install_cwd
-popd
+cd /tmp
 
 cp -a /app/vendor $root/
