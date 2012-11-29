@@ -3,7 +3,7 @@ set -uex
 
 root=$(pwd)
 
-function install_cwd {
+install_cwd() {
     ./configure --prefix=/app/vendor
     make -sj4
     make -sj4 install
